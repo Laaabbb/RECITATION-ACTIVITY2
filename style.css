@@ -10,7 +10,7 @@ body{
 .container{
 	background: #2d3e3f;
 	width: 350px;
-	height: 400px;
+	height: 300px;
 	padding-bottom: 20px;
 	position: absolute;
 	top:50%;
@@ -25,6 +25,7 @@ body{
 	float: left;
   width: 110px;
   line-height: 35px;
+  justify-content: center;
 }
 
 .fontLabel{
