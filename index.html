@@ -12,11 +12,11 @@
         <!--First name-->
     		<div class="box">
           <label for="firstName" class="fl fontLabel"> First Name: </label>
-    			<div class="fl iconBox">
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </div>
+    		<div class="fl iconBox">
+            	<i class="fa fa-user" id="icons" aria-hidden="true"></i>
+            </div>
     			<div class="fr">
-    					<input type="text" name="firstName" placeholder="First Name"
+    					<input type="text" name="first	Name" placeholder="First Name"
               class="textBox" autofocus="on" required>
     			</div>
     			<div class="clr"></div>
@@ -27,7 +27,8 @@
         <!--Second name-->
     		<div class="box">
           <label for="secondName" class="fl fontLabel"> Seconed Name: </label>
-    			<div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+    			<div class="fl iconBox">
+					<i class="fa fa-user" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
     					<input type="text" required name="secondName"
               placeholder="Last Name" class="textBox">
@@ -40,7 +41,7 @@
     		<!---Phone No.------>
     		<div class="box">
           <label for="dob" class="fl fontLabel"> Phone No.: </label>
-    			<div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+    			<div class="fl iconBox"><i class="fa fa-phone-square" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
     					<input type="text" required name="DOA" maxlength="10" placeholder="Date of Birth" class="textBox">
     			</div>
@@ -52,7 +53,7 @@
     		<!---Email ID---->
     		<div class="box">
           <label for="username" class="fl fontLabel"> Username: </label>
-    			<div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+    			<div class="fl iconBox"><i class="fa fa-envelope" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
     					<input type="text" required name="username" placeholder="Username" class="textBox">
     			</div>
@@ -64,7 +65,7 @@
     		<!---Password------>
     		<div class="box">
           <label for="password" class="fl fontLabel"> Password </label>
-    			<div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+    			<div class="fl iconBox"><i class="fa fa-key" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
     					<input type="Password" required name="password" placeholder="Password" class="textBox">
     			</div>
@@ -74,11 +75,32 @@
 
     		<!---Submit Button------>
     		<div class="box" style="background: #2d3e3f">
-    				<input type="Submit" name="Submit" class="submit" value="SUBMIT">
+    				<input type="Submit" name="Submit" class="submit" id="submit" value="SUBMIT">
     		</div>
     		<!---Submit Button----->
       </form>
   </div>
+
+  <div class="prompt" id="prompt">
+	<div id="close">
+		<p id="X">+</p>
+	</div>
+	<p id="promptTxt">Prompt!</p>
+  </div>
+ 
+  <script>
+	document.getElementById("X").onclick = function(){close()};
+	document.getElementById("submit").onclick = function(){prompt()};
+
+	function prompt(){
+		document.getElementById("prompt").style.visibility = "visible";
+	}
+	function close(){
+		document.getElementById("prompt").style.visibility = "hidden";
+	}
+
+  </script>
+  
   <!--Body of Form ends--->
   </body>
 </html>
