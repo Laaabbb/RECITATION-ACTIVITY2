@@ -11,7 +11,7 @@
       <form method="post" autocomplete="on">
         <!--First name-->
     		<div class="box">
-          <label for="firstName" class="fl fontLabel"> First Name: </label>
+          	<label for="firstName" class="fl fontLabel"> First Name: </label>
     		<div class="fl iconBox">
             	<i class="fa fa-user" id="icons" aria-hidden="true"></i>
             </div>
@@ -26,7 +26,7 @@
 
         <!--Second name-->
     		<div class="box">
-          <label for="secondName" class="fl fontLabel"> Seconed Name: </label>
+          	<label for="secondName" class="fl fontLabel"> Seconed Name: </label>
     			<div class="fl iconBox">
 					<i class="fa fa-user" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
@@ -38,21 +38,21 @@
     		<!--Second name-->
 
 
-    		<!---Phone No.------>
+    		<!---Date of Birth------>
     		<div class="box">
-          <label for="dob" class="fl fontLabel"> Phone No.: </label>
-    			<div class="fl iconBox"><i class="fa fa-phone-square" id="icons" aria-hidden="true"></i></div>
+          	<label for="dob" class="fl fontLabel"> Date of Birth: </label>
+    			<div class="fl iconBox"><i class="fa fa-calendar" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
     					<input type="text" required name="DOA" maxlength="10" placeholder="Date of Birth" class="textBox">
     			</div>
     			<div class="clr"></div>
     		</div>
-    		<!---Phone No.---->
+    		<!---Date of Birth---->
 
 
     		<!---Email ID---->
     		<div class="box">
-          <label for="username" class="fl fontLabel"> Username: </label>
+          	<label for="username" class="fl fontLabel"> Username: </label>
     			<div class="fl iconBox"><i class="fa fa-envelope" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
     					<input type="text" required name="username" placeholder="Username" class="textBox">
@@ -64,12 +64,12 @@
 
     		<!---Password------>
     		<div class="box">
-          <label for="password" class="fl fontLabel"> Password </label>
-    			<div class="fl iconBox"><i class="fa fa-key" id="icons" aria-hidden="true"></i></div>
-    			<div class="fr">
-    					<input type="Password" required name="password" placeholder="Password" class="textBox">
-    			</div>
-    			<div class="clr"></div>
+			<label for="password" class="fl fontLabel"> Password </label>
+					<div class="fl iconBox"><i class="fa fa-key" id="icons" aria-hidden="true"></i></div>
+					<div class="fr">
+							<input type="Password" required name="password" placeholder="Password" class="textBox">
+					</div>
+			<div class="clr"></div>
     		</div>
     		<!---Password---->
 
@@ -89,8 +89,8 @@
   </div>
  
   <script>
+	//document.getElementById("submit").onclick = function(){prompt()};
 	document.getElementById("X").onclick = function(){close()};
-	document.getElementById("submit").onclick = function(){prompt()};
 
 	function prompt(){
 		document.getElementById("prompt").style.visibility = "visible";
@@ -98,7 +98,6 @@
 	function close(){
 		document.getElementById("prompt").style.visibility = "hidden";
 	}
-
   </script>
   
   <!--Body of Form ends--->
