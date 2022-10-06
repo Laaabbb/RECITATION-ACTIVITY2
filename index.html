@@ -26,7 +26,7 @@
 
         <!--Second name-->
     		<div class="box">
-          <label for="secondName" class="fl fontLabel"> Seconed Name: </label>
+          <label for="secondName" class="fl fontLabel"> Second Name: </label>
     			<div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
     			<div class="fr">
     					<input type="text" required name="secondName"
