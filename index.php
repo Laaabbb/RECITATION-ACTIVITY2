@@ -16,7 +16,7 @@
     <!-- Body of Form starts -->
   	<div class="container">
 	<h1>SIGN IN</h1>
-      <form method="post" autocomplete="on">
+      <form method="POST" autocomplete="on" action="php/signup.php">
         <!--Name-->
     		<div class="box">
           	<label for="Name" class="fl fontLabel">Name: </label>
@@ -24,7 +24,7 @@
             	<i class="fa fa-user" id="icons" aria-hidden="true"></i>
             </div>
     			<div class="fr">
-    					<input type="text" name="Name" placeholder="Name"
+    					<input type="text" name="name" placeholder="Name"
               class="textBox" autofocus="on" required>
     			</div>
     			<div class="clr"></div>
@@ -69,7 +69,7 @@
 
     		<!---Submit Button------>
     		<div class="box" style="background: #2d3e3f">
-    				<input type="Submit" name="Submit" class="submit" id="submit" value="SUBMIT">
+    				<input type="Submit" name="submit" class="submit" id="submit" value="SUBMIT">
     		</div>
     		<!---Submit Button----->
       </form>

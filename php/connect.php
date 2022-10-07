@@ -2,10 +2,10 @@
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
-    $dbName = 'activity2';
+    $dbName = "activity2";
 
     // Create connection
-    $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
+    $conn = mysqli_connect($servername, $username, $password, $dbName);
 
     // Check Connection
     if (!$conn) {

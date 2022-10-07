@@ -1,6 +1,6 @@
 <?php 
 	function usernameexist($conn, $username){
-		$sql = "SELECT * FROM students WHERE username = ?;";
+		$sql = "SELECT * FROM users WHERE username = ?;";
 		$stmt = mysqli_stmt_init($conn);
 		if(!mysqli_stmt_prepare($stmt, $sql)){
 			header("location: ../index.php?error=stmtfailed");
@@ -22,7 +22,7 @@
 		mysqli_stmt_close($stmt);
 	}
 	function createuser($conn, $fullname, $birthday, $username, $password){
-		$sql = "INSERT INTO students (fullname, birthday, username, password) VALUES(?, ?, ?, ?);";
+		$sql = "INSERT INTO users (fullname, birthday, username, password) VALUES(?, ?, ?, ?);";
 		$stmt = mysqli_stmt_init($conn);
 		if(!mysqli_stmt_prepare($stmt, $sql)){
 			header("location: ../index.php?error=stmtfailed");
