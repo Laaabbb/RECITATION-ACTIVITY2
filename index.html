@@ -1,54 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Form</title>
     <link href="style.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
   </head>
   <body>
+
+
     <!-- Body of Form starts -->
   	<div class="container">
+	<h1>SIGN IN</h1>
       <form method="post" autocomplete="on">
-        <!--First name-->
+        <!--Name-->
     		<div class="box">
-          	<label for="firstName" class="fl fontLabel"> First Name: </label>
+          	<label for="Name" class="fl fontLabel">Name: </label>
     		<div class="fl iconBox">
             	<i class="fa fa-user" id="icons" aria-hidden="true"></i>
             </div>
     			<div class="fr">
-    					<input type="text" name="first	Name" placeholder="First Name"
+    					<input type="text" name="Name" placeholder="Name"
               class="textBox" autofocus="on" required>
     			</div>
     			<div class="clr"></div>
     		</div>
-    		<!--First name-->
-
-
-        <!--Second name-->
-    		<div class="box">
-<<<<<<< HEAD
-          <label for="secondName" class="fl fontLabel"> Second Name: </label>
-    			<div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
-=======
-          	<label for="secondName" class="fl fontLabel"> Seconed Name: </label>
-    			<div class="fl iconBox">
-					<i class="fa fa-user" id="icons" aria-hidden="true"></i></div>
->>>>>>> 2a2486ab6b1cda294cbb57fefac982d06fa9afd1
-    			<div class="fr">
-    					<input type="text" required name="secondName"
-              placeholder="Last Name" class="textBox">
-    			</div>
-    			<div class="clr"></div>
-    		</div>
-    		<!--Second name-->
-
+    		<!--Name-->
 
     		<!---Date of Birth------>
     		<div class="box">
           	<label for="dob" class="fl fontLabel"> Date of Birth: </label>
     			<div class="fl iconBox"><i class="fa fa-calendar" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
-    					<input type="text" required name="DOA" maxlength="10" placeholder="Date of Birth" class="textBox">
+						<input type="text" id="birthday" name="birthday" placeholder="YYYY/MM/DD" class="textBox" required>
+    					<!---<input type="text" required name="DOA" maxlength="10" placeholder="Date of Birth" class="textBox">-->
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -72,7 +61,7 @@
 			<label for="password" class="fl fontLabel"> Password </label>
 					<div class="fl iconBox"><i class="fa fa-key" id="icons" aria-hidden="true"></i></div>
 					<div class="fr">
-							<input type="Password" required name="password" placeholder="Password" class="textBox">
+						<input type="Password" required name="password" placeholder="Password" class="textBox">
 					</div>
 			<div class="clr"></div>
     		</div>
@@ -92,8 +81,19 @@
 	</div>
 	<p id="promptTxt">Prompt!</p>
   </div>
- 
-  <script>
+
+  	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script>
+	  $("#birthday").datepicker({
+		  dateFormat: "yy-mm-dd",
+		  changeMonth: true,
+		  changeYear: true,
+		  showOtherMonths: true,
+		  selectOtherMonths: true,
+		  yearRange: '1990:2050',
+	  });
+
 	//document.getElementById("submit").onclick = function(){prompt()};
 	document.getElementById("X").onclick = function(){close()};
 
