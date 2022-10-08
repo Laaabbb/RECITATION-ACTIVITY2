@@ -8,6 +8,11 @@
 
 		require_once "connect.php";
 		require_once "function.php";
+
+		if(emptyFieldS($fullname, $birthday, $username, $password) !== false){
+			header("location: ../index.php?error=emptyinput");
+			exit();
+		}
 	
 		if (usernameexist($conn, $username) !== false ){
 			header("location: ../index.php?error=unametaken");

@@ -25,7 +25,7 @@
             </div>
     			<div class="fr">
     					<input type="text" name="name" placeholder="Name"
-              class="textBox" autofocus="on" required>
+              class="textBox" autofocus="on">
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -36,8 +36,8 @@
           	<label for="dob" class="fl fontLabel"> Date of Birth: </label>
     			<div class="fl iconBox"><i class="fa fa-calendar" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
-						<input type="text" id="birthday" name="birthday" placeholder="YYYY/MM/DD" class="textBox" required>
-    					<!---<input type="text" required name="DOA" maxlength="10" placeholder="Date of Birth" class="textBox">-->
+						<input type="text" id="birthday" name="birthday" placeholder="YYYY/MM/DD" class="textBox">
+    					<!---<input type="text" name="DOA" maxlength="10" placeholder="Date of Birth" class="textBox">-->
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -49,7 +49,7 @@
           	<label for="username" class="fl fontLabel"> Username: </label>
     			<div class="fl iconBox"><i class="fa fa-envelope" id="icons" aria-hidden="true"></i></div>
     			<div class="fr">
-    					<input type="text" required name="username" placeholder="Username" class="textBox">
+    					<input type="text" name="username" placeholder="Username" class="textBox">
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -61,7 +61,7 @@
 			<label for="password" class="fl fontLabel"> Password </label>
 					<div class="fl iconBox"><i class="fa fa-key" id="icons" aria-hidden="true"></i></div>
 					<div class="fr">
-						<input type="Password" required name="password" placeholder="Password" class="textBox">
+						<input type="Password" name="password" placeholder="Password" class="textBox">
 					</div>
 			<div class="clr"></div>
     		</div>
@@ -72,6 +72,14 @@
     				<input type="Submit" name="submit" class="submit" id="submit" value="SUBMIT">
     		</div>
     		<!---Submit Button----->
+
+			<?php
+				if(isset($_GET["error"])){
+					if($_GET["error"] == "emptyinput"){
+						echo '<center><strong><p style="color:red;">Fill all input</p></strong></center>';
+					}
+				}
+ 			 ?>
       </form>
   </div>
 
@@ -82,6 +90,7 @@
 	<p id="promptTxt">Prompt!</p>
   </div>
 
+	<!-- JQuery -->
   	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	<script>
@@ -94,7 +103,7 @@
 		  yearRange: '1990:2050',
 	  });
 
-	//document.getElementById("submit").onclick = function(){prompt()};
+	/*document.getElementById("submit").onclick = function(){prompt()};
 	document.getElementById("X").onclick = function(){close()};
 
 	function prompt(){
@@ -102,7 +111,7 @@
 	}
 	function close(){
 		document.getElementById("prompt").style.visibility = "hidden";
-	}
+	}*/
   </script>
   
   <!--Body of Form ends--->
