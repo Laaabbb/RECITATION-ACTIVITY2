@@ -36,18 +36,29 @@
 		mysqli_stmt_close($stmt);
 	}
 
-	/*function invalidUsername($username){
+	//Check username
+	function invalidUsername($username){
 		$result;
-		if(strlen($username) <= 8){
-			if(!preg_match"/^[a-zA-Z]*$/", $username and !preg_match"/^[0-9]*$/", $username){
-				$result = true;
-			}
+		if(!preg_match('/^(?=.{1,8}$)[a-z0-9]+(?:[._-][a-z0-9]+)*$/', $username)){
+			$result = true;
 		}
 		else{
 			$result = false;
 		}
 		return $result;
-	}*/
+	}
+
+	//Check password
+	function invalidPass($password){
+		$result;
+		if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,16}$/', $password)) {
+			$result = true;
+		}
+		else{
+			$result = false;
+		}
+		return $result;
+	}
 
 	//Create User
 	function createuser($conn, $fullname, $birthday, $username, $password){
@@ -58,6 +69,7 @@
 			exit();
 		}
 
+		//Hash password for security
 		$HashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
 		mysqli_stmt_bind_param($stmt, "ssss", $fullname, $birthday, $username, $HashedPwd);

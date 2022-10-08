@@ -8,16 +8,14 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 	<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
   </head>
   <body>
-
-
     <!-- Body of Form starts -->
   	<div class="container">
 	<h1>SIGN IN</h1>
       <form method="POST" autocomplete="on" action="php/signup.php">
-        <!--Name-->
+
+       		<!--Name-->
     		<div class="box">
           	<label for="Name" class="fl fontLabel">Name: </label>
     		<div class="fl iconBox">
@@ -74,21 +72,32 @@
     		<!---Submit Button----->
 
 			<?php
+				//Error prompt
 				if(isset($_GET["error"])){
 					if($_GET["error"] == "emptyinput"){
 						echo '<center><strong><p style="color:red;">Fill all input</p></strong></center>';
+					}
+					else if($_GET["error"] == "unametaken"){
+						echo '<center><strong><p style="color:red;">Username taken</p></strong></center>';
+					}
+					else if($_GET["error"] == "username"){
+						echo '<center><strong><p style="color:red;">Username should only consist of 8 characters and include atleast 1 numeral</p></strong></center>';
+					}	
+					else if($_GET["error"] == "password_error"){
+						echo '<center><strong><p style="color:red;">Password should range between 8-16 characters, and should have atleast one upper case, lower case and number</p></strong></center>';
 					}
 				}
  			 ?>
       </form>
   </div>
-
-  <div class="prompt" id="prompt">
-	<div id="close">
-		<p id="X">+</p>
-	</div>
-	<p id="promptTxt">Prompt!</p>
-  </div>
+  
+	<!-- Discarded propmt
+	<div class="prompt" id="prompt">
+		<div id="close">
+			<p id="X">+</p>
+		</div>
+		<p id="promptTxt">Prompt!</p>
+	</div> -->
 
 	<!-- JQuery -->
   	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -103,6 +112,7 @@
 		  yearRange: '1990:2050',
 	  });
 
+	//Discarded prompt functions 
 	/*document.getElementById("submit").onclick = function(){prompt()};
 	document.getElementById("X").onclick = function(){close()};
 
@@ -113,7 +123,7 @@
 		document.getElementById("prompt").style.visibility = "hidden";
 	}*/
   </script>
-  
   <!--Body of Form ends--->
+
   </body>
 </html>
